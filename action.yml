@@ -1,0 +1,23 @@
+name: 'K7z Rollout'
+description: 'Rollout restart a k8s deployment under k7z'
+inputs:
+  base_url:
+    description: 'the base url of the k7z instance, with https and no trailing slash'
+    required: true
+  project_id:
+    description: 'the id of the project'
+    required: true
+  secret: 
+    description: 'the secret to use'
+    required: true
+  secret_header:
+    description: 'the header to put the secret in'
+    required: false
+    default: 'Authorization'
+outputs:
+  status:
+    description: 'the http status code of the rollout'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

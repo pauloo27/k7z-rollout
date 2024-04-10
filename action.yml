@@ -17,7 +17,6 @@ inputs:
 outputs:
   status:
     description: 'the http status code of the rollout'
-    required: true
 runs:
   using: 'node16'
   main: 'dist/index.js'
